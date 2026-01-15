@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prefelizt | La Wishlist Universal de LatAm</title>
+    <meta name="description" content="Guarda deseos de cualquier tienda. Comparte un solo link. Evita regalos repetidos. Próximamente en iOS y Android.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+    <!-- Configuración del Design System -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'paper': '#FDFBF7', 
+                        'ink': '#2D3436',   
+                        'lila': '#A29BFE',  
+                        'mango': '#FF7675', 
+                        'menta': '#55EFC4', 
+                        'azure': '#74b9ff', 
+                    },
+                    fontFamily: {
+                        'display': ['"Archivo Black"', 'sans-serif'],
+                        'body': ['"Inter"', 'sans-serif'],
+                        'mono': ['"JetBrains Mono"', 'monospace'],
+                    },
+                    boxShadow: {
+                        'neo': '4px 4px 0px 0px #2D3436',
+                        'neo-hover': '6px 6px 0px 0px #2D3436',
+                        'neo-sm': '2px 2px 0px 0px #2D3436',
+                        'neo-pressed': '0px 0px 0px 0px #2D3436',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #FDFBF7; color: #2D3436; }
+        .neo-box {
+            @apply bg-white border-2 border-ink rounded-xl shadow-neo transition-all;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="w-full p-6 flex justify-between items-center max-w-6xl mx-auto">
+        <div class="flex items-center gap-2">
+            <!-- Logo Icon Sim -->
+            <div class="w-8 h-8 bg-lila border-2 border-ink rounded-lg flex items-center justify-center font-display text-xs shadow-neo-sm">
+                PF
+            </div>
+            <span class="font-display text-xl tracking-tight">PREFELIZT</span>
+        </div>
+        <div>
+            <a href="mailto:hola@prefelizt.com" class="font-bold text-sm hover:text-lila hover:underline decoration-2 underline-offset-4 transition-colors">
+                Contacto
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20 p-6 max-w-6xl mx-auto w-full">
+        
+        <!-- Left: Copy & Form -->
+        <div class="flex-1 max-w-xl text-center lg:text-left z-10">
+            <!-- Badge -->
+            <div class="inline-block bg-mango text-white border-2 border-ink px-3 py-1 rounded-full text-xs font-bold font-mono shadow-neo-sm mb-6 transform -rotate-2">
+                🚧 EN CONSTRUCCIÓN
+            </div>
+
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl mb-6 leading-tight">
+                Deja de recibir regalos que <span class="text-lila relative inline-block">
+                    no te gustan.
+                    <svg class="absolute w-full h-3 -bottom-1 left-0 text-ink opacity-20" viewBox="0 0 100 10" preserveAspectRatio="none">
+                        <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="3" fill="none" />
+                    </svg>
+                </span>
+            </h1>
+            
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                <strong>Prefelizt</strong> es la wishlist universal para LatAm. Guarda productos de Amazon, Shein o cualquier tienda en un solo lugar. 
+                <br class="hidden sm:block">Comparte tu perfil y deja que tus amigos se organicen para no repetir regalos.
+            </p>
+
+            <!-- Waitlist Form -->
+            <form id="waitlistForm" onsubmit="handleSubmit(event)" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto lg:mx-0 relative">
+                <input type="email" id="email" required placeholder="tu@correo.com" 
+                    class="flex-1 bg-white border-2 border-ink rounded-xl px-4 py-4 font-mono text-sm shadow-neo focus:outline-none focus:border-lila focus:ring-1 focus:ring-lila transition-all placeholder:text-gray-400">
+                
+                <button type="submit" class="bg-lila text-ink font-bold border-2 border-ink rounded-xl px-8 py-4 shadow-neo hover:shadow-neo-hover hover:-translate-y-1 active:shadow-neo-pressed active:translate-y-1 active:translate-x-1 transition-all whitespace-nowrap">
+                    Avísame al lanzar 🚀
+                </button>
+
+                <!-- Success Message (Hidden by default) -->
+                <div id="successMessage" class="absolute inset-0 bg-menta border-2 border-ink rounded-xl shadow-neo flex items-center justify-center hidden transform transition-all">
+                    <span class="font-bold text-ink flex items-center gap-2">
+                        ✅ ¡Estás en la lista! Gracias.
+                    </span>
+                </div>
+            </form>
+            <p class="text-xs text-gray-400 mt-4 font-mono">
+                *Cero spam. Solo te avisaremos cuando la App esté lista.
+            </p>
+        </div>
+
+        <!-- Right: Visual Demo (CSS Mockup) -->
+        <div class="flex-1 w-full max-w-md lg:max-w-sm relative">
+            <!-- Decorative blobs -->
+            <div class="absolute -top-10 -right-10 w-32 h-32 bg-menta rounded-full border-2 border-ink opacity-20 animate-float" style="animation-delay: 1s;"></div>
+            <div class="absolute -bottom-5 -left-10 w-24 h-24 bg-mango rounded-full border-2 border-ink opacity-20 animate-float"></div>
+
+            <!-- Phone Card Container -->
+            <div class="neo-box p-6 relative bg-white rotate-3 hover:rotate-0 transition-transform duration-500 cursor-default">
+                <!-- App Header Mock -->
+                <div class="flex items-center gap-3 mb-6 border-b-2 border-ink/10 pb-4">
+                    <div class="w-12 h-12 rounded-full border-2 border-ink bg-gray-200 overflow-hidden">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h3 class="font-display text-lg leading-none">Wishlist de Felix</h3>
+                        <div class="flex gap-2 mt-1">
+                            <span class="text-[10px] font-bold bg-gray-100 border border-ink px-1 rounded font-mono">👟 27 MX</span>
+                            <span class="text-[10px] font-bold bg-gray-100 border border-ink px-1 rounded font-mono">👕 M</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card Mock -->
+                <div class="bg-paper border-2 border-ink rounded-xl overflow-hidden mb-4">
+                    <div class="h-32 bg-gray-100 flex items-center justify-center border-b-2 border-ink relative">
+                        <span class="text-5xl drop-shadow-md">👟</span>
+                        <div class="absolute bottom-2 left-2 bg-ink text-white text-[10px] font-mono px-2 py-0.5 rounded">
+                            $2,499
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <p class="font-bold text-sm mb-1">Nike Dunk Low Retro</p>
+                        <div class="w-full bg-menta/20 text-green-800 text-[10px] font-bold text-center border border-menta rounded py-1">
+                            ● DISPONIBLE
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Reservation Toast -->
+                <div class="absolute -right-4 top-1/2 bg-white border-2 border-ink rounded-lg p-3 shadow-neo-hover transform translate-x-2 animate-float">
+                    <div class="flex items-center gap-2">
+                        <span class="text-xl">🔒</span>
+                        <div>
+                            <p class="text-[10px] font-bold text-gray-500 uppercase">Estado</p>
+                            <p class="text-xs font-bold">¡Reservado por Ana!</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Features Grid -->
+    <section class="bg-white border-t-2 border-ink py-16 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-display text-3xl text-center mb-12">¿Por qué usar Prefelizt?</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="neo-box p-6 hover:-translate-y-1 transition-transform bg-paper">
+                    <div class="w-12 h-12 bg-lila border-2 border-ink rounded-lg flex items-center justify-center text-2xl mb-4 shadow-neo-sm">
+                        🔗
+                    </div>
+                    <h3 class="font-display text-xl mb-2">Un solo Link</h3>
+                    <p class="text-sm text-gray-600">Olvídate de mandar 5 links de Amazon y 3 capturas de pantalla de Instagram. Todo centralizado.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="neo-box p-6 hover:-translate-y-1 transition-transform bg-paper">
+                    <div class="w-12 h-12 bg-mango text-white border-2 border-ink rounded-lg flex items-center justify-center text-2xl mb-4 shadow-neo-sm">
+                        🚫
+                    </div>
+                    <h3 class="font-display text-xl mb-2">Cero Repetidos</h3>
+                    <p class="text-sm text-gray-600">Cuando alguien "aparta" un regalo, se oculta para los demás por 4 horas. Adiós a las 3 licuadoras.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="neo-box p-6 hover:-translate-y-1 transition-transform bg-paper">
+                    <div class="w-12 h-12 bg-menta border-2 border-ink rounded-lg flex items-center justify-center text-2xl mb-4 shadow-neo-sm">
+                        📏
+                    </div>
+                    <h3 class="font-display text-xl mb-2">Talla Correcta</h3>
+                    <p class="text-sm text-gray-600">Tu perfil incluye tus tallas de ropa, calzado y anillo. Tus amigos nunca más tendrán que adivinar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-paper border-t-2 border-ink py-8 text-center text-xs font-mono text-gray-500">
+        <p>© 2026 Prefelizt. Hecho con 🖤 en LatAm.</p>
+        <div class="mt-2 space-x-4">
+            <a href="#" class="hover:text-ink underline">Instagram</a>
+            <a href="#" class="hover:text-ink underline">TikTok</a>
+        </div>
+    </footer>
+
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const btn = e.target.querySelector('button');
+            const successMsg = document.getElementById('successMessage');
+
+            // Simulación de carga
+            btn.innerHTML = "Guardando...";
+            btn.disabled = true;
+
+            setTimeout(() => {
+                // Aquí iría tu lógica real (ej. conectar con Supabase o Mailchimp)
+                // Por ahora, solo mostramos éxito visual
+                console.log(`Email capturado: ${email}`);
+                successMsg.classList.remove('hidden');
+                
+                // Opcional: Resetear form después de un tiempo
+                // setTimeout(() => successMsg.classList.add('hidden'), 3000);
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
+
