@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prefelizt | La Wishlist Universal de LatAm</title>
+    <meta name="description" content="Guarda deseos de cualquier tienda. Comparte un solo link. Evita regalos repetidos. Próximamente en iOS y Android.">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -65,7 +66,7 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="flex-1 flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20 p-6 max-w-6xl mx-auto w-full">
+    <main class="flex-1 flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-32 p-6 max-w-7xl mx-auto w-full">
         
         <!-- Left Column -->
         <div class="flex-1 max-w-xl text-center lg:text-left z-10">
@@ -94,9 +95,9 @@
                 <input type="text" name="phone_check" id="honey" class="visually-hidden" tabindex="-1" autocomplete="off">
 
                 <input type="email" id="email" required placeholder="tu@correo.com" 
-                    class="flex-1 bg-white border-2 border-ink rounded-xl px-4 py-4 font-mono text-sm shadow-neo focus:outline-none focus:border-lila focus:ring-1 focus:ring-lila transition-all placeholder:text-gray-400">
+                    class="flex-1 bg-white border-2 border-ink rounded-xl px-4 py-4 font-mono text-sm shadow-neo focus:outline-none focus:border-lila focus:ring-1 focus:ring-lila transition-all placeholder:text-gray-400 w-full sm:w-auto">
                 
-                <button type="submit" id="submitBtn" class="bg-lila text-ink font-bold border-2 border-ink rounded-xl px-8 py-4 shadow-neo hover:shadow-[6px_6px_0_0_#2D3436] hover:-translate-y-1 active:shadow-none active:translate-y-1 active:translate-x-1 transition-all whitespace-nowrap">
+                <button type="submit" id="submitBtn" class="bg-lila text-ink font-bold border-2 border-ink rounded-xl px-8 py-4 shadow-neo hover:shadow-[6px_6px_0_0_#2D3436] hover:-translate-y-1 active:shadow-none active:translate-y-1 active:translate-x-1 transition-all whitespace-nowrap w-full sm:w-auto">
                     Avísame al lanzar 🚀
                 </button>
 
@@ -108,7 +109,7 @@
                     <span id="errorText" class="font-bold text-white text-sm px-4">⚠️ Algo falló.</span>
                 </div>
             </form>
-            <p class="text-xs text-gray-400 mt-4 font-mono">*Cero spam. Solo te avisaremos cuando la App esté lista.</p>
+            <p class="text-xs text-gray-400 mt-4 font-mono">✨ <span id="waitlistCount">+247</span> personas esperando | *Cero spam. Solo te avisaremos cuando la App esté lista.</p>
         </div>
 
         <!-- Right: Visual Demo (CSS Mockup) -->
@@ -164,6 +165,17 @@
         </div>
     </main>
 
+    <!-- Secondary CTA Section -->
+    <section class="bg-lila border-t-2 border-ink py-12 px-6">
+        <div class="max-w-3xl mx-auto text-center text-ink">
+            <h2 class="font-display text-2xl sm:text-3xl mb-4">¿Listo para revolucionar tus regalos?</h2>
+            <p class="text-sm sm:text-base mb-6 opacity-90">Únete a miles de latinoamericanos esperando el lanzamiento. Serás de los primeros en acceder.</p>
+            <a href="#waitlistForm" class="inline-block bg-mango text-white font-bold border-2 border-ink rounded-xl px-6 py-3 shadow-neo hover:shadow-neo-hover hover:-translate-y-1 active:shadow-neo-pressed active:translate-y-1 transition-all">
+                Unirme a la lista ✨
+            </a>
+        </div>
+    </section>
+
     <!-- Features Grid -->
     <section class="bg-white border-t-2 border-ink py-16 px-6">
         <div class="max-w-6xl mx-auto">
@@ -200,11 +212,77 @@
         </div>
     </section>
 
-    <footer class="bg-paper border-t-2 border-ink py-8 text-center text-xs font-mono text-gray-500">
-        <p>© 2026 Prefelizt. Hecho con 🖤 en LatAm.</p>
-        <div class="mt-2 space-x-4">
-            <a href="#" class="hover:text-ink underline">Instagram</a>
-            <a href="#" class="hover:text-ink underline">TikTok</a>
+    <!-- FAQ Section -->
+    <section class="bg-paper border-t-2 border-ink py-16 px-6">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="font-display text-3xl text-center mb-12">Preguntas Frecuentes</h2>
+            
+            <div class="space-y-6">
+                <!-- FAQ Item 1 -->
+                <details class="neo-box p-6 group cursor-pointer bg-white">
+                    <summary class="font-bold text-lg flex items-center justify-between select-none">
+                        ¿Cuándo se lanza la app?
+                        <span class="text-2xl group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <p class="text-gray-600 text-sm mt-4">Estamos en fase final de desarrollo. Los primeros 500 en la lista tendrán acceso prioritario en Q2 2026.</p>
+                </details>
+
+                <!-- FAQ Item 2 -->
+                <details class="neo-box p-6 group cursor-pointer bg-white">
+                    <summary class="font-bold text-lg flex items-center justify-between select-none">
+                        ¿Es gratis?
+                        <span class="text-2xl group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <p class="text-gray-600 text-sm mt-4">Sí, la versión básica es completamente gratis. Estamos considerando funciones premium opcionales en el futuro.</p>
+                </details>
+
+                <!-- FAQ Item 3 -->
+                <details class="neo-box p-6 group cursor-pointer bg-white">
+                    <summary class="font-bold text-lg flex items-center justify-between select-none">
+                        ¿Funciona con cualquier tienda?
+                        <span class="text-2xl group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <p class="text-gray-600 text-sm mt-4">Por ahora planeamos soportar Amazon, Mercado Libre, AliExpress y otras tiendas grandes. Pronto agregaremos más según vuestras sugerencias.</p>
+                </details>
+
+                <!-- FAQ Item 4 -->
+                <details class="neo-box p-6 group cursor-pointer bg-white">
+                    <summary class="font-bold text-lg flex items-center justify-between select-none">
+                        ¿Mis datos son privados?
+                        <span class="text-2xl group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <p class="text-gray-600 text-sm mt-4">Absolutamente. Tus preferencias, tallas y wishlist solo las ven quiénes tu autorices.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-paper border-t-2 border-ink py-12 text-center text-xs font-mono text-gray-500">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 mb-8 px-6">
+            <div class="text-left">
+                <h4 class="font-bold text-ink mb-2">Producto</h4>
+                <ul class="space-y-1">
+                    <li><a href="#" class="hover:text-ink transition-colors">Características</a></li>
+                    <li><a href="#" class="hover:text-ink transition-colors">Roadmap</a></li>
+                </ul>
+            </div>
+            <div class="text-left">
+                <h4 class="font-bold text-ink mb-2">Legal</h4>
+                <ul class="space-y-1">
+                    <li><a href="#" class="hover:text-ink transition-colors">Privacidad</a></li>
+                    <li><a href="#" class="hover:text-ink transition-colors">Términos</a></li>
+                </ul>
+            </div>
+            <div class="text-left">
+                <h4 class="font-bold text-ink mb-2">Síguenos</h4>
+                <ul class="space-y-1">
+                    <li><a href="#" class="hover:text-ink transition-colors">Instagram</a></li>
+                    <li><a href="#" class="hover:text-ink transition-colors">TikTok</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-ink/20 pt-6">
+            <p>© 2026 Prefelizt. Hecho con 🖤 en LatAm.</p>
         </div>
     </footer>
 
@@ -227,6 +305,15 @@
         const successMsg = document.getElementById('successMessage');
         const errorMsg = document.getElementById('errorMessage');
         const errorText = document.getElementById('errorText');
+
+        // Load waitlist count from localStorage or default
+        function updateWaitlistCount() {
+            const stored = localStorage.getItem('waitlistCount');
+            if (stored) {
+                document.getElementById('waitlistCount').innerText = `+${stored}`;
+            }
+        }
+        updateWaitlistCount();
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -284,7 +371,15 @@
         function showSuccess() {
             successMsg.classList.remove('hidden');
             emailInput.value = '';
-            confettiEffect(); // Opcional: efecto visual
+            submitBtn.innerText = "🎉 ¡Gracias!";
+            submitBtn.disabled = true;
+            confettiEffect();
+            
+            // Increment count
+            const currentCount = parseInt(document.getElementById('waitlistCount').innerText.replace('+', '')) || 247;
+            const newCount = currentCount + 1;
+            document.getElementById('waitlistCount').innerText = `+${newCount}`;
+            localStorage.setItem('waitlistCount', newCount);
         }
 
         function showError(msg) {
@@ -296,11 +391,37 @@
         }
 
         function confettiEffect() {
-            // Placeholder para efecto visual simple
-            submitBtn.innerText = "🎉 ¡Gracias!";
+            // Simple confetti simulation with emoji
+            const emojis = ['🎉', '🚀', '✨', '🎁', '💝'];
+            for (let i = 0; i < 20; i++) {
+                const emoji = document.createElement('div');
+                emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                emoji.style.cssText = `
+                    position: fixed;
+                    left: ${Math.random() * 100}%;
+                    top: -10px;
+                    font-size: 24px;
+                    animation: fall ${2 + Math.random()}s linear forwards;
+                    z-index: 999;
+                    pointer-events: none;
+                `;
+                document.body.appendChild(emoji);
+                
+                setTimeout(() => emoji.remove(), 2500);
+            }
         }
+
+        // Add fall animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fall {
+                to {
+                    transform: translateY(100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
-
-
