@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prefelizt | Legal & Privacidad</title>
+    <meta name="robots" content="noindex"> <!-- No indexar legal todavía -->
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'paper': '#FDFBF7', 
+                        'ink': '#2D3436',   
+                        'lila': '#A29BFE',
+                    },
+                    fontFamily: {
+                        'display': ['"Archivo Black"', 'sans-serif'],
+                        'body': ['"Inter"', 'sans-serif'],
+                        'mono': ['"JetBrains Mono"', 'monospace'],
+                    },
+                    boxShadow: {
+                        'neo': '4px 4px 0px 0px #2D3436',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #FDFBF7; color: #2D3436; font-family: 'Inter', sans-serif; }
+        .legal-section { margin-bottom: 3rem; }
+        h2 { font-family: 'Archivo Black', sans-serif; font-size: 1.5rem; margin-bottom: 1rem; }
+        h3 { font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+        p, ul { font-size: 0.9rem; line-height: 1.6; color: #4a4a4a; }
+        ul { list-style-type: disc; padding-left: 1.5rem; }
+        .neo-box { @apply bg-white border-2 border-ink rounded-xl shadow-neo p-8 max-w-3xl mx-auto; }
+    </style>
+</head>
+<body class="py-12 px-6">
+
+    <nav class="max-w-3xl mx-auto mb-8 flex justify-between items-center">
+        <a href="index.html" class="font-bold text-sm hover:text-lila flex items-center gap-2">
+            <span>←</span> Volver al inicio
+        </a>
+        <span class="font-display text-xl">PREFELIZT LEGAL</span>
+    </nav>
+
+    <main class="neo-box">
+        
+        <div class="border-b-2 border-ink pb-6 mb-6">
+            <h1 class="font-display text-3xl mb-2">Términos y Privacidad</h1>
+            <p class="font-mono text-xs text-gray-500">Última actualización: 15 de Enero, 2026</p>
+        </div>
+
+        <!-- 1. AVISO DE PRIVACIDAD -->
+        <section class="legal-section">
+            <h2>1. Aviso de Privacidad Simplificado</h2>
+            <p>
+                En cumplimiento con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP - México) y normativas similares en LatAm, <strong>Prefelizt</strong> (en adelante "Nosotros"), te informa que:
+            </p>
+            
+            <h3>¿Qué datos recolectamos?</h3>
+            <p>Únicamente tu <strong>correo electrónico</strong> a través de nuestro formulario de lista de espera.</p>
+
+            <h3>¿Para qué los usamos?</h3>
+            <ul>
+                <li>Para notificarte exclusivamente cuando la aplicación esté disponible (Lanzamiento Beta/Oficial).</li>
+                <li>Para enviarte actualizaciones críticas sobre el estado del proyecto.</li>
+            </ul>
+
+            <h3>¿Qué NO hacemos?</h3>
+            <ul>
+                <li><strong>No vendemos</strong> tu correo a terceros.</li>
+                <li>No te enviaremos spam ni publicidad de otros productos.</li>
+            </ul>
+
+            <h3>Tus Derechos (ARCO)</h3>
+            <p>
+                Puedes solicitar la eliminación de tu correo de nuestra base de datos en cualquier momento enviando un email a 
+                <a href="mailto:hola@prefelizt.com" class="font-bold underline decoration-lila">hola@prefelizt.com</a>.
+            </p>
+        </section>
+
+        <!-- 2. TÉRMINOS DE USO (WAITLIST) -->
+        <section class="legal-section">
+            <h2>2. Términos de la Lista de Espera</h2>
+            
+            <h3>Naturaleza del Servicio</h3>
+            <p>
+                Actualmente, Prefelizt se encuentra en fase de desarrollo ("En Construcción"). Al registrarte, entiendes que estás solicitando un acceso temprano ("Early Access") y no la prestación de un servicio inmediato.
+            </p>
+
+            <h3>Sin Garantías</h3>
+            <p>
+                No garantizamos una fecha específica de lanzamiento. Nos reservamos el derecho de modificar, suspender o cancelar el proyecto sin previo aviso (aunque te avisaremos si eso pasa).
+            </p>
+
+            <h3>Propiedad Intelectual</h3>
+            <p>
+                La marca "Prefelizt", el logotipo "The Curator Stack", el diseño visual y el código son propiedad exclusiva de sus creadores.
+            </p>
+        </section>
+
+        <!-- 3. DESCARGO DE RESPONSABILIDAD -->
+        <section class="legal-section border-t-2 border-ink pt-6 mt-6">
+            <h2>3. Disclaimer (Afiliados)</h2>
+            <p class="text-xs">
+                Prefelizt es una herramienta de organización. En el futuro, la aplicación podrá contener enlaces de afiliados a tiendas como Amazon o MercadoLibre. Esto significa que si compras a través de nuestros enlaces, podríamos recibir una pequeña comisión sin costo adicional para ti. Esto nos ayuda a mantener los servidores funcionando.
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="text-center mt-12 text-xs font-mono text-gray-400">
+        <p>Documento informativo para fase MVP.</p>
+    </footer>
+
+</body>
+</html>
