@@ -3,8 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prefelizt | La Wishlist Universal de LatAm</title>
-    <meta name="description" content="Guarda deseos de cualquier tienda. Comparte un solo link. Evita regalos repetidos. Próximamente en iOS y Android.">
+    <title>Prefelizt | La Wishlist Universal de LatAm - Evita Regalos Repetidos</title>
+    <meta name="description" content="Prefelizt es la wishlist universal para LatAm. Guarda deseos de cualquier tienda (Amazon, Shein, Mercado Libre), comparte un solo link y evita regalos repetidos. Gratis y próximamente en iOS y Android.">
+    <meta name="keywords" content="wishlist, regalos, Amazon, Mercado Libre, Shein, lista de deseos, LatAm, compartir regalos">
+    <meta name="author" content="Prefelizt">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://prefelizt.com">
+    <meta property="og:title" content="Prefelizt | La Wishlist Universal de LatAm">
+    <meta property="og:description" content="Guarda deseos de cualquier tienda, comparte un solo link y evita regalos repetidos. Gratis y próximamente disponible.">
+    <meta property="og:locale" content="es_ES">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Prefelizt | La Wishlist Universal de LatAm">
+    <meta name="twitter:description" content="Guarda deseos, comparte un link, evita regalos repetidos.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://prefelizt.com">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -49,17 +71,50 @@
         /* Ocultar Honeypot visualmente pero dejarlo en el DOM para engañar bots */
         .visually-hidden { position: absolute; left: -9999px; opacity: 0; }
     </style>
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Prefelizt",
+        "description": "La wishlist universal para LatAm. Guarda deseos, comparte un link, evita regalos repetidos.",
+        "url": "https://prefelizt.com",
+        "applicationCategory": "Shopping",
+        "operatingSystem": "iOS, Android",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Prefelizt",
+        "url": "https://prefelizt.com",
+        "email": "hola@prefelizt.com",
+        "sameAs": [
+            "https://instagram.com/prefelizt",
+            "https://tiktok.com/@prefelizt"
+        ]
+    }
+    </script>
 </head>
 <body class="min-h-screen flex flex-col font-body overflow-x-hidden">
 
     <!-- Navbar -->
-    <nav class="w-full p-6 flex justify-between items-center max-w-6xl mx-auto">
+    <nav class="w-full p-6 flex justify-between items-center max-w-6xl mx-auto" role="navigation" aria-label="Navegación principal">
         <div class="flex items-center gap-2">
-            <div class="w-8 h-8 bg-lila border-2 border-ink rounded-lg flex items-center justify-center font-display text-xs shadow-neo">PF</div>
+            <div class="w-8 h-8 bg-lila border-2 border-ink rounded-lg flex items-center justify-center font-display text-xs shadow-neo" title="Logo de Prefelizt">PF</div>
             <span class="font-display text-xl tracking-tight">PREFELIZT</span>
         </div>
         <div>
-            <a href="mailto:hola@prefelizt.com" class="font-bold text-sm hover:text-lila hover:underline decoration-2 underline-offset-4 transition-colors">
+            <a href="mailto:hola@prefelizt.com" class="font-bold text-sm hover:text-lila hover:underline decoration-2 underline-offset-4 transition-colors" aria-label="Contactar a Prefelizt">
                 Contacto
             </a>
         </div>
@@ -76,16 +131,16 @@
 
             <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl mb-6 leading-tight">
                 Deja de recibir regalos que <span class="text-lila relative inline-block">
-                    no te gustan.
-                    <svg class="absolute w-full h-3 -bottom-1 left-0 text-ink opacity-20" viewBox="0 0 100 10" preserveAspectRatio="none">
+                    no te gustan<span class="hidden"> - Prefelizt</span>.
+                    <svg class="absolute w-full h-3 -bottom-1 left-0 text-ink opacity-20" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true">
                         <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="3" fill="none" />
                     </svg>
                 </span>
             </h1>
             
             <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                <strong>Prefelizt</strong> es la wishlist universal para LatAm. Guarda productos de Amazon, Shein o cualquier tienda en un solo lugar. 
-                <br class="hidden sm:block">Comparte tu perfil y deja que tus amigos se organicen para no repetir regalos.
+                <strong>Prefelizt</strong> es la <span class="font-semibold">wishlist universal para LatAm</span>. Guarda productos de <strong>Amazon, Mercado Libre, Shein</strong> o cualquier tienda en un solo lugar. 
+                <br class="hidden sm:block">Comparte tu perfil y deja que tus amigos se organicen para <strong>evitar regalos repetidos</strong>.
             </p>
 
             <!-- SECURE FORM -->
@@ -94,8 +149,9 @@
                 <!-- 1. HONEYPOT FIELD (Si un bot llena esto, lo bloqueamos) -->
                 <input type="text" name="phone_check" id="honey" class="visually-hidden" tabindex="-1" autocomplete="off">
 
-                <input type="email" id="email" required placeholder="tu@correo.com" 
-                    class="flex-1 bg-white border-2 border-ink rounded-xl px-4 py-4 font-mono text-sm shadow-neo focus:outline-none focus:border-lila focus:ring-1 focus:ring-lila transition-all placeholder:text-gray-400 w-full sm:w-auto">
+                <input type="email" id="email" name="email" required placeholder="tu@correo.com" 
+                    class="flex-1 bg-white border-2 border-ink rounded-xl px-4 py-4 font-mono text-sm shadow-neo focus:outline-none focus:border-lila focus:ring-1 focus:ring-lila transition-all placeholder:text-gray-400 w-full sm:w-auto"
+                    aria-label="Tu correo electrónico">
                 
                 <button type="submit" id="submitBtn" class="bg-lila text-ink font-bold border-2 border-ink rounded-xl px-8 py-4 shadow-neo hover:shadow-[6px_6px_0_0_#2D3436] hover:-translate-y-1 active:shadow-none active:translate-y-1 active:translate-x-1 transition-all whitespace-nowrap w-full sm:w-auto">
                     Avísame al lanzar 🚀
@@ -177,112 +233,120 @@
     </section>
 
     <!-- Features Grid -->
-    <section class="bg-white border-t-2 border-ink py-16 px-6">
+    <section class="bg-white border-t-2 border-ink py-16 px-6" aria-label="Características principales">
         <div class="max-w-6xl mx-auto">
             <h2 class="font-display text-3xl text-center mb-12">¿Por qué usar Prefelizt?</h2>
             
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-8" itemscope itemtype="https://schema.org/ItemList">
                 <!-- Feature 1 -->
-                <div class="neo-box p-6 hover:-translate-y-1 transition-transform bg-paper">
-                    <div class="w-12 h-12 bg-lila border-2 border-ink rounded-lg flex items-center justify-center text-2xl mb-4 shadow-neo-sm">
+                <div class="neo-box p-6 hover:-translate-y-1 transition-transform bg-paper" itemscope itemtype="https://schema.org/Thing">
+                    <div class="w-12 h-12 bg-lila border-2 border-ink rounded-lg flex items-center justify-center text-2xl mb-4 shadow-neo-sm" aria-hidden="true">
                         🔗
                     </div>
-                    <h3 class="font-display text-xl mb-2">Un solo Link</h3>
-                    <p class="text-sm text-gray-600">Olvídate de mandar 5 links de Amazon y 3 capturas de pantalla de Instagram. Todo centralizado.</p>
+                    <h3 class="font-display text-xl mb-2" itemprop="name">Un solo Link</h3>
+                    <p class="text-sm text-gray-600" itemprop="description">Olvídate de mandar múltiples links de Amazon y capturas de pantalla de Instagram. Todo centralizado en un solo lugar.</p>
                 </div>
 
                 <!-- Feature 2 -->
-                <div class="neo-box p-6 hover:-translate-y-1 transition-transform bg-paper">
-                    <div class="w-12 h-12 bg-mango text-white border-2 border-ink rounded-lg flex items-center justify-center text-2xl mb-4 shadow-neo-sm">
+                <div class="neo-box p-6 hover:-translate-y-1 transition-transform bg-paper" itemscope itemtype="https://schema.org/Thing">
+                    <div class="w-12 h-12 bg-mango text-white border-2 border-ink rounded-lg flex items-center justify-center text-2xl mb-4 shadow-neo-sm" aria-hidden="true">
                         🚫
                     </div>
-                    <h3 class="font-display text-xl mb-2">Cero Repetidos</h3>
-                    <p class="text-sm text-gray-600">Cuando alguien "aparta" un regalo, se oculta para los demás por 4 horas. Adiós a las 3 licuadoras.</p>
+                    <h3 class="font-display text-xl mb-2" itemprop="name">Cero Regalos Repetidos</h3>
+                    <p class="text-sm text-gray-600" itemprop="description">Cuando alguien aparta un regalo, se oculta para los demás por 4 horas. Así evitas regalos duplicados.</p>
                 </div>
 
                 <!-- Feature 3 -->
-                <div class="neo-box p-6 hover:-translate-y-1 transition-transform bg-paper">
-                    <div class="w-12 h-12 bg-menta border-2 border-ink rounded-lg flex items-center justify-center text-2xl mb-4 shadow-neo-sm">
+                <div class="neo-box p-6 hover:-translate-y-1 transition-transform bg-paper" itemscope itemtype="https://schema.org/Thing">
+                    <div class="w-12 h-12 bg-menta border-2 border-ink rounded-lg flex items-center justify-center text-2xl mb-4 shadow-neo-sm" aria-hidden="true">
                         📏
                     </div>
-                    <h3 class="font-display text-xl mb-2">Talla Correcta</h3>
-                    <p class="text-sm text-gray-600">Tu perfil incluye tus tallas de ropa, calzado y anillo. Tus amigos nunca más tendrán que adivinar.</p>
+                    <h3 class="font-display text-xl mb-2" itemprop="name">Talla Correcta</h3>
+                    <p class="text-sm text-gray-600" itemprop="description">Tu perfil incluye tallas de ropa, calzado y otros detalles. Tus amigos nunca más tendrán que adivinar el tamaño correcto.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section class="bg-paper border-t-2 border-ink py-16 px-6">
+    <section class="bg-paper border-t-2 border-ink py-16 px-6" aria-label="Preguntas frecuentes" itemscope itemtype="https://schema.org/FAQPage">
         <div class="max-w-2xl mx-auto">
             <h2 class="font-display text-3xl text-center mb-12">Preguntas Frecuentes</h2>
             
             <div class="space-y-6">
                 <!-- FAQ Item 1 -->
-                <details class="neo-box p-6 group cursor-pointer bg-white">
+                <details class="neo-box p-6 group cursor-pointer bg-white" itemscope itemtype="https://schema.org/Question">
                     <summary class="font-bold text-lg flex items-center justify-between select-none">
-                        ¿Cuándo se lanza la app?
-                        <span class="text-2xl group-open:rotate-180 transition-transform">▼</span>
+                        <span itemprop="name">¿Cuándo se lanza la app?</span>
+                        <span class="text-2xl group-open:rotate-180 transition-transform" aria-hidden="true">▼</span>
                     </summary>
-                    <p class="text-gray-600 text-sm mt-4">Estamos en fase final de desarrollo. Los primeros 500 en la lista tendrán acceso prioritario en Q2 2026.</p>
+                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer" class="text-gray-600 text-sm mt-4">
+                        <p itemprop="text">Estamos en fase final de desarrollo. Los primeros 500 en la lista tendrán acceso prioritario en Q2 2026.</p>
+                    </div>
                 </details>
 
                 <!-- FAQ Item 2 -->
-                <details class="neo-box p-6 group cursor-pointer bg-white">
+                <details class="neo-box p-6 group cursor-pointer bg-white" itemscope itemtype="https://schema.org/Question">
                     <summary class="font-bold text-lg flex items-center justify-between select-none">
-                        ¿Es gratis?
-                        <span class="text-2xl group-open:rotate-180 transition-transform">▼</span>
+                        <span itemprop="name">¿Es gratis?</span>
+                        <span class="text-2xl group-open:rotate-180 transition-transform" aria-hidden="true">▼</span>
                     </summary>
-                    <p class="text-gray-600 text-sm mt-4">Sí, la versión básica es completamente gratis. Estamos considerando funciones premium opcionales en el futuro.</p>
+                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer" class="text-gray-600 text-sm mt-4">
+                        <p itemprop="text">Sí, la versión básica es completamente gratis. Estamos considerando funciones premium opcionales en el futuro.</p>
+                    </div>
                 </details>
 
                 <!-- FAQ Item 3 -->
-                <details class="neo-box p-6 group cursor-pointer bg-white">
+                <details class="neo-box p-6 group cursor-pointer bg-white" itemscope itemtype="https://schema.org/Question">
                     <summary class="font-bold text-lg flex items-center justify-between select-none">
-                        ¿Funciona con cualquier tienda?
-                        <span class="text-2xl group-open:rotate-180 transition-transform">▼</span>
+                        <span itemprop="name">¿Funciona con cualquier tienda?</span>
+                        <span class="text-2xl group-open:rotate-180 transition-transform" aria-hidden="true">▼</span>
                     </summary>
-                    <p class="text-gray-600 text-sm mt-4">Por ahora planeamos soportar Amazon, Mercado Libre, AliExpress y otras tiendas grandes. Pronto agregaremos más según vuestras sugerencias.</p>
+                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer" class="text-gray-600 text-sm mt-4">
+                        <p itemprop="text">Por ahora planeamos soportar Amazon, Mercado Libre, AliExpress y otras tiendas grandes. Pronto agregaremos más según vuestras sugerencias.</p>
+                    </div>
                 </details>
 
                 <!-- FAQ Item 4 -->
-                <details class="neo-box p-6 group cursor-pointer bg-white">
+                <details class="neo-box p-6 group cursor-pointer bg-white" itemscope itemtype="https://schema.org/Question">
                     <summary class="font-bold text-lg flex items-center justify-between select-none">
-                        ¿Mis datos son privados?
-                        <span class="text-2xl group-open:rotate-180 transition-transform">▼</span>
+                        <span itemprop="name">¿Mis datos son privados?</span>
+                        <span class="text-2xl group-open:rotate-180 transition-transform" aria-hidden="true">▼</span>
                     </summary>
-                    <p class="text-gray-600 text-sm mt-4">Absolutamente. Tus preferencias, tallas y wishlist solo las ven quiénes tu autorices.</p>
+                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer" class="text-gray-600 text-sm mt-4">
+                        <p itemprop="text">Absolutamente. Tus preferencias, tallas y wishlist solo las ven quiénes autorices. Cumplimos con GDPR y protección de datos.</p>
+                    </div>
                 </details>
             </div>
         </div>
     </section>
 
-    <footer class="bg-paper border-t-2 border-ink py-12 text-center text-xs font-mono text-gray-500">
+    <footer class="bg-paper border-t-2 border-ink py-12 text-center text-xs font-mono text-gray-500" role="contentinfo">
         <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 mb-8 px-6">
             <div class="text-left">
                 <h4 class="font-bold text-ink mb-2">Producto</h4>
                 <ul class="space-y-1">
-                    <li><a href="#" class="hover:text-ink transition-colors">Características</a></li>
-                    <li><a href="#" class="hover:text-ink transition-colors">Roadmap</a></li>
+                    <li><a href="#características" class="hover:text-ink transition-colors">Características</a></li>
+                    <li><a href="#roadmap" class="hover:text-ink transition-colors">Roadmap</a></li>
                 </ul>
             </div>
             <div class="text-left">
                 <h4 class="font-bold text-ink mb-2">Legal</h4>
                 <ul class="space-y-1">
-                    <li><a href="#" class="hover:text-ink transition-colors">Privacidad</a></li>
-                    <li><a href="#" class="hover:text-ink transition-colors">Términos</a></li>
+                    <li><a href="/privacidad" class="hover:text-ink transition-colors">Privacidad</a></li>
+                    <li><a href="/terminos" class="hover:text-ink transition-colors">Términos de Servicio</a></li>
                 </ul>
             </div>
             <div class="text-left">
                 <h4 class="font-bold text-ink mb-2">Síguenos</h4>
                 <ul class="space-y-1">
-                    <li><a href="#" class="hover:text-ink transition-colors">Instagram</a></li>
-                    <li><a href="#" class="hover:text-ink transition-colors">TikTok</a></li>
+                    <li><a href="https://instagram.com/prefelizt" class="hover:text-ink transition-colors" rel="noopener noreferrer" target="_blank">Instagram</a></li>
+                    <li><a href="https://tiktok.com/@prefelizt" class="hover:text-ink transition-colors" rel="noopener noreferrer" target="_blank">TikTok</a></li>
                 </ul>
             </div>
         </div>
         <div class="border-t border-ink/20 pt-6">
-            <p>© 2026 Prefelizt. Hecho con 🖤 en LatAm.</p>
+            <p>© 2026 <span class="font-bold">Prefelizt</span>. Hecho con 🖤 en LatAm.</p>
         </div>
     </footer>
 
